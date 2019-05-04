@@ -12,11 +12,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="14dp"
+        android:text="Agregar Docentes"
         android:textColor="#000"
-        android:textSize="25dp"
-        android:text="Agregar Docentes" />
+        android:textSize="25dp" />
 
     <EditText
         android:id="@+id/txtNombreDocente"
@@ -24,10 +24,21 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/textView2"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="11dp"
         android:ems="10"
         android:hint="Ingrese Nombre"
         android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txtApellidoDocente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtNombreDocente"
+        android:layout_below="@+id/txtNombreDocente"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Ingrese Apellido"/>
 
     <Button
         android:id="@+id/addDocente"
@@ -35,16 +46,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignTop="@+id/txtNombreDocente"
-        android:layout_marginEnd="12dp"
-        android:text="Agregar"
+        android:layout_marginEnd="34dp"
+        android:layout_marginTop="27dp"
         android:background="@color/colorAccent"
-        android:textColor="#fff"/>
+        android:text="Agregar"
+        android:textColor="#fff" />
 
     <ListView
         android:id="@+id/listadoDocentes"
-        android:layout_width="match_parent"
+        android:layout_width="520dp"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/addDocente"
-        android:layout_marginTop="18dp" />
+        android:layout_below="@+id/txtApellidoDocente"
+        android:layout_marginTop="15dp"/>
+
+
 </RelativeLayout>

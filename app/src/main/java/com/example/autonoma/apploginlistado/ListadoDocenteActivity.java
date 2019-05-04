@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class ListadoDocenteActivity extends AppCompatActivity {
 
-    EditText txtNombreDocente ;
+    EditText txtNombreDocente ,txtApellidoDocente;
     Button addDocente;
     ListView listadoDocentes;
 
@@ -26,6 +26,7 @@ public class ListadoDocenteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listado_docente);
 
         txtNombreDocente = findViewById(R.id.txtNombreDocente);
+        txtApellidoDocente = findViewById(R.id.txtApellidoDocente);
         addDocente = findViewById(R.id.addDocente);
         listadoDocentes = findViewById(R.id.listadoDocentes);
 
@@ -37,10 +38,11 @@ public class ListadoDocenteActivity extends AppCompatActivity {
         addDocente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!txtNombreDocente.getText().toString().equals("")) {
-                    datosDocente.add(txtNombreDocente.getText().toString());
+                if(!txtNombreDocente.getText().toString().equals("") && !txtApellidoDocente.getText().toString().equals("")) {
+                    datosDocente.add(txtNombreDocente.getText().toString() + "  "+ txtApellidoDocente.getText().toString());
                     adaptador.notifyDataSetChanged();
                     txtNombreDocente.setText("");
+                    txtApellidoDocente.setText("");
                 }else{
                     Toast.makeText(ListadoDocenteActivity.this, "No puede ingresar un Docente Vacío", Toast.LENGTH_SHORT).show();
                 }
