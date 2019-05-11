@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ListadoLogin.iml" filepath="$PROJECT_DIR$/ListadoLogin.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/appLoginListado.iml" filepath="$PROJECT_DIR$/appLoginListado.iml" />
+      <module fileurl="file://C:\Users\AUTONOMA\Desktop\Proyectos Android\ADD\ListadoLogin\app\app.iml" filepath="C:\Users\AUTONOMA\Desktop\Proyectos Android\ADD\ListadoLogin\app\app.iml" />
+      <module fileurl="file://C:\Users\AUTONOMA\Desktop\Proyectos Android\ADD\ListadoLogin\appLoginListado.iml" filepath="C:\Users\AUTONOMA\Desktop\Proyectos Android\ADD\ListadoLogin\appLoginListado.iml" />
     </modules>
   </component>
 </project>

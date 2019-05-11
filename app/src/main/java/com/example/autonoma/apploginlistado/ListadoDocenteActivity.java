@@ -1,7 +1,11 @@
 package com.example.autonoma.apploginlistado;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -40,7 +44,6 @@ public class ListadoDocenteActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(!txtNombreDocente.getText().toString().equals("") && !txtApellidoDocente.getText().toString().equals("")) {
                     datosDocente.add(txtNombreDocente.getText().toString() + "  "+ txtApellidoDocente.getText().toString());
-                    adaptador.notifyDataSetChanged();
                     txtNombreDocente.setText("");
                     txtApellidoDocente.setText("");
                 }else{
@@ -48,8 +51,40 @@ public class ListadoDocenteActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu,menu);
+        return true;
+    }
 
-
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.addItem:
+                datosDocente.add("Profesor Charles Xavier");
+                adaptador.notifyDataSetChanged();
+                Toast.makeText(this, "You have selected ADD", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.refresh:
+                adaptador.notifyDataSetChanged();
+                Toast.makeText(this, "You have selected REFRESH", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.seeMap:
+                Intent i = new Intent(ListadoDocenteActivity.this, MapsActivity.class);
+                startActivity(i);
+                Toast.makeText(this, "You have selected MAP", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.closeApp:
+                Toast.makeText(this, "You have selected CLOSE", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ListadoDocenteActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
