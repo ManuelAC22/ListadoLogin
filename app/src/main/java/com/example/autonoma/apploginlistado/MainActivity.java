@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
                 String usuario = txtUsuario.getText().toString();
                 String password = txtPassword.getText().toString();
 
-                if(usuario.equals("admin") && password.equals("123456")){
-                    Intent i = new Intent(MainActivity.this, ListadoDocenteActivity.class);
+                if(usuario.equals("manuel") && password.equals("123456")){
+                    Intent i = new Intent(MainActivity.this, MapsActivity.class);
                     startActivity(i);
                     finish();
                 }else{
